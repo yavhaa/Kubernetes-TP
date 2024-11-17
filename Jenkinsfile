@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy Image') {
             steps {
                 script {
-                    sh 'kubectl apply -f nodejs-deployment.yaml'
+                    sh 'sudo kubectl --kubeconfig .kube/config apply -f nodejs-deployment.yaml'
                 }
             }
         }
